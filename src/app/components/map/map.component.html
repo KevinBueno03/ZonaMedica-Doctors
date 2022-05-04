@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div fxLayoutAlign="center center" class="mt-2">
+    <span>
+        <h1 fxLayoutAlign="center center"><strong>Ubicación</strong></h1>
+        <h4>Ingresa tu ubicación en la barra de búsqueda o arrastra el pin para
+            almacenar tu información.</h4>
+    </span>
+</div>
+
+<div fxLayoutAlign="center center" style="margin-top: 1rem;">
+    <mat-form-field fxFlex=40%>
+        <input matInput type="text" placeholder="Ingresa tu dirección">
+        <mat-icon matSuffix>my_location</mat-icon>
+    </mat-form-field>
+</div>
+
+
+<div id="mapbox" fxLayoutAlign="center center" style="margin-top: 0.5rem;
+    margin-left: 20rem;"></div>
+
+<div fxLayoutAlign="center right" class="mt-1">
+    <button id="boton" mat-raised-button color="primary" type="button"
+        (click)="crearDireccion()">
+        <mat-icon>done</mat-icon> Guardar Dirección
+    </button>
+</div>

@@ -4,7 +4,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { DoctorService } from "src/app/Services/doctor.service";
 
 @Injectable()
-export class DoctorSeguridadRouter implements CanActivate{
+export class DoctorSegurityRouter implements CanActivate{
 
   constructor(private seguridadDoctorService: DoctorService, private router: Router){}
 

@@ -1,0 +1,94 @@
+
+<div style="width: 100%;margin:0; padding:0;">
+  <app-navbar></app-navbar>
+
+  <!-- Main -->
+  <div class="container">
+    <div class="body row">
+      <div class="main w-100">
+        <span>
+          <h1 fxLayoutAlign="center center" style="font-size:
+            x-large;"><strong>Datos
+              Personales</strong></h1>
+        </span>
+        <div class="card" *ngFor="let link of doctoresData">
+          <div class="card-body">
+            <!--<button type="button" data-bs-placement="top" title="Editar perfil" (click)="actualizarPerfil()" mat-button class="menu-buttons ml-auto" style="margin-right: 0;" >
+                Solicitar Actualizar Perfil
+              </button>-->
+            <button type="button" title="Editar biografia"
+              style="margin-top:
+              2rem;" (click)="openCita(biografia)" mat-button
+              class="menu-buttons ml-auto" style="margin-right:
+              0;">
+              Actualizar Biografia
+            </button>
+
+            <div class="fotografia">
+              <img *ngIf="!link.img" class="perfil"
+                src="../../../assets/img/profilePaciente.svg"
+                alt="">
+              <img *ngIf="link.img" class="perfil"
+                src="{{link.img}}" alt=""><br>
+            </div>
+
+            <mat-list class="table" role="list" style="font-size:
+              larger;">
+              <mat-list-item role="listitem">Nombre Completo: {{
+                link.firstName
+                }} {{ link.firstLastName}} {{
+                link.secondLastName}}</mat-list-item>
+              <mat-list-item role="listitem">Identidad: {{
+                link.hn_id}}</mat-list-item>
+              <mat-list-item role="listitem">Correo Electronico:
+                {{ link.email}}</mat-list-item>
+              <mat-list-item role="listitem">Telefono: {{
+                link.phone}}</mat-list-item>
+              <mat-list-item role="listitem">Especialidad: {{
+                link.master_degree}}</mat-list-item>
+              <mat-list-item role="listitem">Departamento: {{
+                link.department}}</mat-list-item>
+              <mat-list-item role="listitem">Biografia: {{
+                link.bibliography}}</mat-list-item>
+            </mat-list>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--MODALES-->
+<ng-template #biografia let-c="close" let-d="dismiss">
+  <div *ngFor="let doc of doctoresData">
+    <div class="modal-header" style="justify-content: center; align-items:
+      center;">
+      <h4 class="modal-title" id="modal-basic-title"><strong>Actualizar
+          Biografia</strong></h4>
+      <button type="button" class="close" aria-label="Close"
+        (click)="d('Cross
+        click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form [formGroup]="formLoginAdmin">
+      <div class="modal-body">
+        <mat-form-field class="example-full-width input"
+          appearance="outline">
+          <mat-label>Cambia tu biografia</mat-label>
+          <textarea matInput formControlName="bibliography"
+            class="example-full-width input" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="modal-footer">
+        <button mat-raised-button class="close" (click)="d('Cross
+          click')">Cerrar</button>
+        <button mat-raised-button color="primary"
+          (click)="actualizarBiografia(doc.email)"
+          [disabled]=formLoginAdmin.invalid>Actualizar Biografia</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

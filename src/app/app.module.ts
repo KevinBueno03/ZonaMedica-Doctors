@@ -14,6 +14,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UploadCurriculumComponent } from './components/upload-curriculum/upload-curriculum.component';
+import { UploadProfilePictureComponent } from './components/upload-profile-picture/upload-profile-picture.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MapComponent } from './components/map/map.component';
+
 
 
 @NgModule({
@@ -21,7 +28,13 @@ import { RegisterComponent } from './components/register/register.component';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CalendarComponent,
+    DashboardComponent,
+    UploadCurriculumComponent,
+    UploadProfilePictureComponent,
+    ProfileComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
