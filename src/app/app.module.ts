@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -34,13 +39,20 @@ import { MapComponent } from './components/map/map.component';
     UploadCurriculumComponent,
     UploadProfilePictureComponent,
     ProfileComponent,
-    MapComponent
+    MapComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

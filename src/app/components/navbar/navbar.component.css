@@ -1,0 +1,220 @@
+
+html, body{
+  width: 100%;
+  margin:0;
+  padding:0;
+}
+
+.nav-item{
+  padding-right: 2px;
+  margin-right: 2px;
+  font-family: Ropa Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 0.5em;
+  /* identical to box height*/
+
+
+
+}
+li, i{
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/*
+mat-toolbar{
+  background: #004a9f;
+  color: white;
+}
+mat-sidenav{
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #004a9f;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.content{
+  height: calc(100vh - 98px);
+  margin: 16px;
+  margin-left: 32px;
+  border-radius: 10px;
+}
+.menu-button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  font-size: 1rem;
+}
+.menu-buttons{
+  width: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-self: left;
+  font-size: 1rem;
+}
+.iconos{
+  margin-right: 8px;;
+}
+.avatar{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  margin: 0px;
+  margin-top: 8px;
+  font-weight: normal;
+}
+.nombre{
+  margin: 0px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+.designation{
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgrey;
+}
+mat-divider{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+img{
+  width: 100%;
+  height: 100%;
+  padding: 0px 0px 0px 0px;
+  padding-right: 0px;
+}
+.columna{
+  padding: 0px 0px 0px 0px;
+}
+*/
+
+a{
+  text-decoration: none;
+  color:white;
+}
+
+a:hover, a:active{
+  color:lightgrey;
+}
+
+.navigation-items{
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+
+@media(max-width: 959px){
+  mat-toolbar{
+    border-radius: 0px;
+  }
+}
+/***********Enable/Disabled****************/
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    background: #dfd9ea;
+    transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
+    cursor: pointer;
+}
+.switch::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: #fafafa;
+    border-radius: 50%;
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.switch:active::before {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.28), 0 0 0 20px rgba(128,128,128,0.1);
+}
+input:checked + .switch {
+    background: #72da67;
+}
+input:checked + .switch::before {
+    left: 27px;
+    background: #fff;
+}
+input:checked + .switch:active::before {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.28), 0 0 0 20px rgba(0,150,136,0.2);
+}
+.estado{
+  font-weight: bold;
+  text-align: center;
+}
+
+/*user-options*/
+user-options:before {
+  content: " ";
+  right: 30px;
+  bottom: -15px;
+  border-top: 15px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: none;
+}
+ul{
+  list-style: none;
+}
+li{
+  text-decoration: none;
+}
+.user-options:focus {
+  /* clicking on label should toggle the menu */
+  pointer-events: none;
+}
+.user-options:focus ul {
+  /*  opacity is 1 in opened state (see below) */
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  /* don't let pointer-events affect descendant elements */
+  pointer-events: auto;
+}
+.user-options ul {
+  z-index: 100;
+  position: absolute;
+  width: auto;
+  right: 0;
+  background-color:#0d6efd ;
+  /* use opacity to fake immediate toggle */
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s;
+  display: none;
+  padding: 1em;
+}
+.user-options ul li{
+  margin-top:0.3em;
+  margin-bottom: 0.1em;
+}
+
+
+.navbar-custom {
+  background-color:#3f51b5!important;
+}
+/* Modify brand and text color */
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: white;
+}

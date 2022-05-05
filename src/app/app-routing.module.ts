@@ -15,8 +15,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 const routes: Routes = [
 
   { path: '', redirectTo: 'doctor/login',pathMatch: 'full' },
-  { path: 'doctor/login', component: LoginComponent, canActivate: [DoctorSegurityRouter] },
-  { path: 'doctor/register', component: RegisterComponent , canActivate: [DoctorSegurityRouter]},
+  { path: 'doctor/login', component: LoginComponent},
+  { path: 'doctor/register', component: RegisterComponent},
   { path: 'doctor/calendar', component: CalendarComponent, canActivate: [DoctorSegurityRouter] },
   { path: 'doctor/dashboard', component: DashboardComponent,  canActivate: [DoctorSegurityRouter] },
   { path: 'doctor/upload-curriculum', component: UploadCurriculumComponent, canActivate: [DoctorSegurityRouter] },
@@ -28,6 +28,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [DoctorSegurityRouter]
 })
 export class AppRoutingModule { }

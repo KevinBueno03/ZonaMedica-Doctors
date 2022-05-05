@@ -22,7 +22,7 @@
   height: 100%;
   display: block;
   background-color: #ffffff;
-  background-image: url('../../../../assets/img/subir-foto.svg');
+  background-image: url('src/assets/img/subir-foto.svg');
   background-size: 80%!important;
   background-position: center;
   background-repeat: no-repeat;

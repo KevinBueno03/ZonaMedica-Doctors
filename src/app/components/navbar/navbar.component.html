@@ -24,7 +24,7 @@
                 <li class="nav-item">
                     <a class="nav-link">
                         <button mat-button class="menu-buttons"
-                            routerLink="/doctor/calendario-doctor">
+                            routerLink="/doctor/calendar">
                             <mat-icon class="iconos">event</mat-icon>
                             <span>Agenda</span>
                         </button>
@@ -34,7 +34,7 @@
                 <li class="nav-item">
                     <a class="nav-link">
                         <button mat-button class="menu-buttons"
-                            routerLink="/doctor/dashboard-doctor">
+                            routerLink="/doctor/dashboard">
                             <mat-icon class="iconos">groups</mat-icon>
                             <span>Pacientes</span>
                         </button>
@@ -53,7 +53,7 @@
                 <li class="nav-item">
                     <a class="nav-link">
                         <button mat-button class="menu-buttons"
-                            routerLink="/doctor/direccion">
+                            routerLink="/doctor/map">
                             <mat-icon class="iconos">place</mat-icon>
                         </button>
                     </a>
@@ -68,7 +68,7 @@
                 <li class="nav-item">
                     <a class="nav-link">
                         <button mat-button class="menu-buttons"
-                            routerLink="/doctor/dashboard-doctor">
+                            routerLink="/doctor/dashboard">
                             <mat-icon class="iconos">notifications</mat-icon>
                         </button>
                     </a>
@@ -84,17 +84,17 @@
                         </mat-list-item>
                         <mat-menu #menus="matMenu">
                             <button mat-button class="menu-buttons"
-                                routerLink="/doctor/subir-foto-perfil">
+                                routerLink="/doctor/upload-profile-picture">
                                 <mat-icon class="iconos">camera</mat-icon>
                                 <span>Subir Foto Perfil</span>
                             </button><br>
                             <button mat-button class="menu-buttons"
-                                routerLink="/doctor/subir-curriculum">
+                                routerLink="/doctor/upload-curriculum">
                                 <mat-icon class="iconos">upload</mat-icon>
                                 <span>Subir Archivo</span>
                             </button><br>
                             <button mat-button class="menu-buttons"
-                                routerLink="/doctor/perfil">
+                                routerLink="/doctor/profile">
                                 <mat-icon class="iconos">person</mat-icon>
                                 <span>Ver Perfil</span>
                             </button><br>
@@ -118,7 +118,7 @@
                     </a>
                 </li>
             </ul>
-            <a routerLink="/doctor/perfil">
+            <a routerLink="/doctor/profile">
                 <img *ngIf="!link.img"
                     src="../../../../assets/img/profilePaciente.svg"
                     style="width:40px; height:40px; border-color: black;
@@ -141,8 +141,8 @@
         center;">
         <h4 class="modal-title" id="modal-basic-title"><strong>Reestablecer
                 Contraseña</strong></h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross
-            click')">
+        <button type="button" class="close" aria-label="Close"
+            (click)="d('Crossclick')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>

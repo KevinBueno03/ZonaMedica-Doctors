@@ -10,7 +10,7 @@ export class DoctorSegurityRouter implements CanActivate{
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
     if(localStorage.getItem('token')==null){
-      this.router.navigate(['/doctor/login-doctor']);
+      this.router.navigate(['doctor/login']);
       return false;
     }else{
       return true;

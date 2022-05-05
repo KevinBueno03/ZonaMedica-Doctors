@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
     });
   }
   logoutDoctor(){
-    this._router.navigateByUrl('/doctor/login-doctor');
+    this._router.navigateByUrl('/doctor/login');
     this.doctorService.logoutDoctor();
   }
 
