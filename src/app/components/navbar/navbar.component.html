@@ -1,0 +1,176 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom w-100"
+    style="width: 100%; margin: 0;">
+    <div class="container-fluid">
+        <a class="navbar-brand"><span><img src="../assets/img/up (9).svg"
+                    style="width:50px; height: 50px;" routerLink="/"></span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText" *ngFor="let link
+            of doctoresData">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page">
+                        <button mat-button class="menu-buttons"
+                            routerLink="/doctor/dashboard">
+                            <mat-icon class="iconos">home</mat-icon>
+                            <span>Dashboard</span>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <button mat-button class="menu-buttons"
+                            routerLink="/doctor/calendar">
+                            <mat-icon class="iconos">event</mat-icon>
+                            <span>Agenda</span>
+                        </button>
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <button mat-button class="menu-buttons"
+                            routerLink="/doctor/dashboard">
+                            <mat-icon class="iconos">groups</mat-icon>
+                            <span>Pacientes</span>
+                        </button>
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <button mat-button class="menu-buttons"
+                            routerLink="/doctor/dashboard-doctor">
+                            <mat-icon class="iconos">paid</mat-icon>
+                            <span>Billetera</span>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <button mat-button class="menu-buttons"
+                            routerLink="/doctor/map">
+                            <mat-icon class="iconos">place</mat-icon>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <button mat-button class="menu-buttons">
+                            <mat-icon class="iconos">chat</mat-icon>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <button mat-button class="menu-buttons"
+                            routerLink="/doctor/dashboard">
+                            <mat-icon class="iconos">notifications</mat-icon>
+                        </button>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <mat-list-item [matMenuTriggerFor]="menus">
+                            <button mat-button class="menu-buttons">
+                                <mat-icon class="iconos">arrow_drop_down</mat-icon>
+                                <span>{{link.firstName}} {{link.firstLastName}}</span>
+                            </button>
+                        </mat-list-item>
+                        <mat-menu #menus="matMenu">
+                            <button mat-button class="menu-buttons"
+                                routerLink="/doctor/upload-profile-picture">
+                                <mat-icon class="iconos">camera</mat-icon>
+                                <span>Subir Foto Perfil</span>
+                            </button><br>
+                            <button mat-button class="menu-buttons"
+                                routerLink="/doctor/upload-curriculum">
+                                <mat-icon class="iconos">upload</mat-icon>
+                                <span>Subir Archivo</span>
+                            </button><br>
+                            <button mat-button class="menu-buttons"
+                                routerLink="/doctor/profile">
+                                <mat-icon class="iconos">person</mat-icon>
+                                <span>Ver Perfil</span>
+                            </button><br>
+                            <button mat-button (click)="open(restablecerContra)"
+                                class="menu-buttons">
+                                <mat-icon class="iconos">lock</mat-icon>
+                                <span>Cambiar Contraseña</span>
+                            </button><br>
+                            <button mat-button (click)="logoutDoctor()"
+                                class="menu-buttons">
+                                <mat-icon class="iconos">logout</mat-icon>
+                                <span>Cerrar Sesion</span>
+                            </button>
+                        </mat-menu>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <mat-slide-toggle [ngModel]="link.onService"
+                            (change)="cambiarToggle(link.onService)"></mat-slide-toggle>
+                    </a>
+                </li>
+            </ul>
+            <a routerLink="/doctor/profile">
+                <img *ngIf="!link.img"
+                    src="../../../../assets/img/profilePaciente.svg"
+                    style="width:40px; height:40px; border-color: black;
+                    border-width: 2px; border-radius: 50%;">
+                <img *ngIf="link.img" src="{{link.img}}" style="width:40px;
+                    height:40px; border-color: black; border-width: 2px;
+                    border-radius: 50%;">
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!--MODAL RECUPERAR CONTRASEÑA-->
+<ng-template #restablecerContra let-c="close" let-d="dismiss">
+    <div class="modal-header" style="justify-content: center; align-items:
+        center;">
+        <h4 class="modal-title" id="modal-basic-title"><strong>Reestablecer
+                Contraseña</strong></h4>
+        <button type="button" class="close" aria-label="Close"
+            (click)="d('Crossclick')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="recuperarContra" class="example-form">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput type="email" placeholder="Ejem. sofia@gmail.com"
+                    formControlName="emailRecu" style="width: 24em;"
+                    class="form-control" [ngClass]="{
+                    'is-invalid':recuContra.emailRecu.errors }" required />
+                <div *ngIf="recuContra.emailRecu.errors"
+                    class="invalid-feedback">
+                    <mat-error *ngIf="recuContra.emailRecu.errors.required">El
+                        correo no puede estar en blanco.
+                    </mat-error>
+
+                    <div *ngIf="recuContra.emailRecu.errors.email">Ingrese un
+                        correo válido.</div>
+                </div>
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <br>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button mat-raised-button class="close" (click)="d('Cross click')">Cerrar</button>
+        <button mat-raised-button color="primary" (click)="recupContra()"
+            [disabled]=recuperarContra.invalid>Reestablecer Contraseña</button>
+    </div>
+</ng-template>
